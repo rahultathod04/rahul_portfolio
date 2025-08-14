@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Tathod — Portfolio</title>
+  <meta name="description" content="Algorithm-first data science portfolio of Rahul Tathod." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="home">RT<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li class="has-hover">
+          <a href="#leetcode" id="leetcode-link" aria-haspopup="true" aria-expanded="false">LeetCode</a>
+          <div class="hover-card" role="dialog" aria-label="LeetCode Snapshot" aria-modal="false">
+            <div id="leetcode-card">
+              <div class="lc-header">
+                <div>
+                  <strong id="lc-username">username</strong>
+                  <div id="lc-title" class="muted small">Algorithm & DSA progress</div>
+                </div>
+                <a id="lc-profile-link" target="_blank" rel="noopener" class="btn btn-sm">Profile ↗</a>
+              </div>
+
+                 <!-- Venn-style total solved -->
+                  <div class="lc-venn" aria-label="Solved distribution">
+                    <div class="venn-circle easy" title="Easy"></div>
+                    <div class="venn-circle medium" title="Medium"></div>
+                    <div class="venn-circle hard" title="Hard"></div>
+                    <div class="venn-center-count" id="lc-total-venn">—</div>
+                    <div class="tiny muted venn-caption">Total Solved</div>
+                  </div>
+
+
+              <!-- Only Easy / Medium / Hard below (new) -->
+              <div class="lc-stats lc-3">
+                <div class="stat easy">
+                  <div class="k" id="lc-easy">—</div>
+                  <div class="v">Easy</div>
+                </div>
+                <div class="stat medium">
+                  <div class="k" id="lc-medium">—</div>
+                  <div class="v">Medium</div>
+                </div>
+                <div class="stat hard">
+                  <div class="k" id="lc-hard">—</div>
+                  <div class="v">Hard</div>
+                </div>
+              </div>
+
+              <div class="lc-recent">
+                <h4>Recent Problems</h4>
+                <ul id="lc-recent-list"></ul>
+              </div>  
+
+              <div class="muted tiny">
+                Tip: update <code>/data/leetcode.json</code> or plug any third-party LeetCode stats image into <code>cardImage</code> field.
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <h1>Rahul Tathod</h1>
+        <p class="tagline">CS undergrad · Data Science & Algorithms</p>
+        <p class="intro">
+          I’m a 3rd‑year Computer Engineering student focused on becoming a great data scientist.
+          I love solving problems with clean algorithms and practical machine learning.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">See Projects</a>
+          <a href="#about" class="btn btn-ghost">About Me</a>
+        </div>
+      </div>
+      <div class="hero-bg" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <div class="filters" role="tablist" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">Data</button>
+          <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">ML</button>
+          <button class="filter-btn" data-filter="algo" role="tab" aria-selected="false">DSA</button>
+          <button class="filter-btn" data-filter="viz" role="tab" aria-selected="false">Viz</button>
+        </div>
+      </div>
+      <div id="project-grid" class="grid"></div>
+    
+    <section id="live" class="section">
+      <div class="section-head">
+        <h2>Live Activity</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>GitHub — Latest Repos</h3>
+          <p class="muted tiny">Auto-fetched from your public GitHub profile.</p>
+          <ul id="gh-repos" class="muted" style="list-style:none; padding-left:0; display:grid; gap:10px;"></ul>
+          <div style="margin-top:10px">
+            <a id="gh-profile-link" class="btn btn-sm" href="#" target="_blank" rel="noopener">GitHub Profile ↗</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>LeetCode — Realtime Stats</h3>
+          <p class="muted tiny">Updates in real time when available; falls back gracefully.</p>
+          <div class="lc-stats" id="lc-stats-live">
+              <div class="stat"><div class="k" id="lc-total-live">—</div><div class="v">Solved</div></div>
+              <div class="stat"><div class="k" id="lc-easy-live">—</div><div class="v">Easy</div></div>
+              <div class="stat"><div class="k" id="lc-medium-live">—</div><div class="v">Medium</div></div>
+              <div class="stat"><div class="k" id="lc-hard-live">—</div><div class="v">Hard</div></div>
+          </div>
+          <div class="total-circle" id="total-solved-circle-live">0</div>
+
+          <h4 style="margin-top:10px">Recent Problems</h4>
+          <ul id="lc-recent-live" style="list-style:none; padding-left:0; display:grid; gap:8px;"></ul>
+          <div style="margin-top:10px">
+            <a id="lc-profile-live" class="btn btn-sm" href="#" target="_blank" rel="noopener">LeetCode Profile ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>Skills</h2>
+      </div>
+      <div id="skills-grid" class="skills-grid"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about">
+        <img src="c:\Users\rahul\OneDrive\Documents\WhatsApp Image 2025-07-20 at 07.04.59_40aa7a08.jpg" alt="Avatar illustration" class="avatar" />
+        <div>
+          <p>
+            I’m currently in my third year of Computer Engineering. I enjoy the intersection of
+            algorithms and data—turning messy problems into tidy, explainable solutions. This
+            site updates from simple JSON files, so new projects and skills are easy to add.
+          </p>
+          <p class="muted">
+            Fun fact: my best work happens after I write the brute‑force solution and then
+            squeeze it with a better data structure.
+          </p>
+          <a class="btn btn-ghost" href="./assets/Rahul_Tathod_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>Open to internships, projects, and collaboration.</p>
+          <ul class="contact-list">
+            <li><a id="lnk-email" href="mailto:rahultathod04@gmail.com">rahultathod04@gmail.com</a></li>
+            <li><a id="lnk-github" href="https://github.com/rahultathod04" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a id="lnk-linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <span id="year"></span> Rahul Tathod</div>
+    <div class="muted tiny">Built with HTML/CSS/JS · Content from <code>/data/*.json</code></div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

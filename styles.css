@@ -1,0 +1,247 @@
+/* Basic reset and theme */
+:root {
+  --bg: #0a0b0e;        /* black-ish */
+  --panel: #0f1117;     /* deep panel */
+  --text: #ffffff;      /* white text */
+  --muted: #b5b8c6;
+  --brand: #7c6cf3;     /* violet */
+  --brand-2: #22ccff;   /* sky blue */
+  --border: #1b1f2a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.light {
+  --bg: #f7f9fc;
+  --panel: #ffffff;
+  --text: #0b1020;
+  --muted: #55607a;
+  --brand: #6f5cf7;
+  --brand-2: #0fb7ff;
+  --border: #e6e8ef;
+  --shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(11,12,16,0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+.logo { font-weight: 800; letter-spacing: 0.5px; color: var(--text); text-decoration: none; }
+.logo .dot { color: var(--brand); }
+.nav ul { display: flex; gap: 18px; align-items: center; list-style: none; margin: 0; padding: 0; }
+.nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+.nav a.cta { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); }
+.theme-toggle { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 8px 10px; border-radius: 10px; cursor: pointer; }
+
+/* Hover card for LeetCode */
+.has-hover { position: relative; }
+.hover-card {
+  position: absolute;
+  top: 120%;
+  left: -140px;
+  width: 360px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: none;
+}
+.has-hover:focus-within .hover-card,
+.has-hover:hover .hover-card { display: block; }
+.lc-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.btn { display: inline-block; padding: 10px 14px; border-radius: 12px; background: linear-gradient(135deg,var(--brand),var(--brand-2)); color: white; text-decoration: none; font-weight: 600; border: none; }
+.btn-sm { padding: 6px 10px; font-size: 12px; }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.tiny { font-size: 12px; }
+
+.lc-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin: 8px 0 10px; }
+.stat { background: rgba(124,108,243,0.08); border: 1px dashed var(--border); border-radius: 10px; padding: 10px; text-align: center; }
+.k { font-size: 20px; font-weight: 800; }
+.v { font-size: 12px; color: var(--muted); }
+
+.lc-recent h4 { margin: 8px 0; }
+.lc-recent ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.lc-recent li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 10px; }
+
+/* Sections */
+.section { max-width: 1100px; margin: 0 auto; padding: 64px 20px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.section h2 { margin: 0; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+.filter-btn.active { outline: 3px solid rgba(124,108,243,0.25); }
+
+/* Hero */
+.hero { position: relative; overflow: clip; border-bottom: 1px solid var(--border); }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 90px 20px 76px; }
+.tagline { font-weight: 700; letter-spacing: 1px; opacity: 0.85; }
+.intro { max-width: 700px; }
+.hero-actions { display: flex; gap: 12px; margin-top: 14px; }
+.hero-bg { position: absolute; inset: 0; z-index: -1; }
+
+/* Projects */
+.grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px; }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.project-card h3 { margin-top: 6px; margin-bottom: 6px; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.badge { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px dashed var(--border); color: var(--muted); }
+.project-actions { display: flex; gap: 10px; margin-top: 10px; }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 12px; }
+.skill-card h4 { margin: 6px 0; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* About */
+.about { display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: start; }
+.avatar { width: 140px; height: 140px; border-radius: 50%; border: 2px solid var(--border); background: rgba(255,255,255,0.05); object-fit: cover; }
+
+/* Contact + Footer */
+.contact { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.site-footer { border-top: 1px solid var(--border); padding: 24px; display: flex; justify-content: space-between; gap: 12px; background: var(--panel); }
+
+@media (max-width: 720px) {
+  .hover-card { left: 0; width: calc(100vw - 40px); }
+  .about { grid-template-columns: 1fr; }
+}
+
+#hero-canvas{width:100%;height:100%;display:block}
+/* --- LeetCode hover-card: mini total + 3 stats --- */
+.lc-total-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4px 0 10px;
+}
+
+.lc-total-mini {
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  position: relative;
+}
+.lc-total-mini::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 2px solid rgba(124,108,243,0.25);
+  pointer-events: none;
+}
+
+.lc-stats.lc-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* professional color-coding for difficulties */
+.stat.easy    { background: rgba(16,185,129,0.10); border: 1px dashed var(--border); }
+.stat.medium  { background: rgba(234,179,8,0.10);  border: 1px dashed var(--border); }
+.stat.hard    { background: rgba(239,68,68,0.10);  border: 1px dashed var(--border); }
+
+.stat.easy .k   { color: #10b981; }
+.stat.medium .k { color: #eab308; }
+.stat.hard .k   { color: #ef4444; }
+  
+/* --- Venn mini-total (hover card) --- */
+.lc-venn {
+  position: relative;
+  width: 132px;          /* compact and balanced */
+  height: 110px;
+  margin: 6px auto 12px; /* centered above the stats */
+}
+
+.venn-circle {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  opacity: 0.35;
+  mix-blend-mode: screen;          /* tasteful additive blend */
+  filter: saturate(115%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.05); /* subtle edge for dark/light */
+}
+
+/* triangle arrangement for a crisp central overlap */
+.venn-circle.easy   { background: #10b981; left: 4px;  bottom: 8px; }
+.venn-circle.medium { background: #eab308; right: 4px; bottom: 8px; }
+.venn-circle.hard   { background: #ef4444; left: 50%; transform: translateX(-50%); top: 0; }
+
+/* center total number */
+.venn-center-count {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -46%);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--text);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.venn-caption {
+  text-align: center;
+  margin-top: 86px;   /* sits just under the circles */
+}
+
+/* keep your 3-column stat boxes */
+.lc-stats.lc-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* difficulty tones (already present for boxes; keep if not duplicated) */
+.stat.easy .k   { color: #10b981; }
+.stat.medium .k { color: #eab308; }
+.stat.hard .k   { color: #ef4444; }
+
+
+
+/* Pull the Venn total closer to the header in hover card */
+#leetcode-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* small consistent spacing */
+}
+
+.lc-header {
+  margin-bottom: 4px; /* reduce space under header */
+}
+
+.lc-venn {
+  margin-top: 0;   /* remove extra top gap */
+  margin-bottom: 8px;
+}

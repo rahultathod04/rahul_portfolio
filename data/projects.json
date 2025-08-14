@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Airbnb Price Prediction",
+    "description": "End\u2011to\u2011end regression pipeline from data cleaning to model selection with explainability (SHAP).",
+    "kind": "ml",
+    "tags": [
+      "Python",
+      "pandas",
+      "scikit\u2011learn",
+      "SHAP"
+    ],
+    "repo": "https://github.com/rahultathod/airbnb-price-ml",
+    "notebook": "https://nbviewer.org/github/.../notebook.ipynb",
+    "post": "https://medium.com/.../airbnb-price-ml"
+  },
+  {
+    "title": "MovieLens Recommender",
+    "description": "Matrix factorization + implicit feedback; evaluated with MAP@K and offline A/B.",
+    "kind": "ml",
+    "tags": [
+      "Recsys",
+      "NumPy",
+      "PyTorch"
+    ],
+    "repo": "https://github.com/rahultathod/movielens-recsys"
+  },
+  {
+    "title": "SQL\u2011First Sales Analytics",
+    "description": "A modular SQL pipeline with dbt-style transformations and automated reporting.",
+    "kind": "data",
+    "tags": [
+      "SQL",
+      "ETL",
+      "dashboards"
+    ],
+    "repo": "https://github.com/rahultathod/sql-sales-analytics",
+    "demo": "https://rahul-analytics-demo.netlify.app"
+  },
+  {
+    "title": "LeetCode Patterns Explorer",
+    "description": "Visualize problem patterns (sliding window, two pointers, DP) with interactive examples.",
+    "kind": "algo",
+    "tags": [
+      "DSA",
+      "JavaScript",
+      "Visualization"
+    ],
+    "repo": "https://github.com/rahultathod/leetcode-patterns",
+    "demo": "https://rahul-leetcode.netlify.app"
+  },
+  {
+    "title": "World Happiness Viz",
+    "description": "Story\u2011driven data visualization exploring features correlated with happiness scores.",
+    "kind": "viz",
+    "tags": [
+      "D3.js",
+      "Data Storytelling"
+    ],
+    "demo": "https://rahul-happiness-viz.netlify.app",
+    "repo": "https://github.com/rahultathod/happiness-viz"
+  }
+]

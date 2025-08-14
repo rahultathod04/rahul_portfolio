@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Languages",
+    "items": [
+      "Python",
+      "SQL",
+      "C++",
+      "JavaScript"
+    ]
+  },
+  {
+    "title": "Libraries",
+    "items": [
+      "pandas",
+      "NumPy",
+      "scikit\u2011learn",
+      "Matplotlib",
+      "PyTorch"
+    ]
+  },
+  {
+    "title": "Data",
+    "items": [
+      "ETL",
+      "dbt\u2011style modeling",
+      "Airflow basics",
+      "APIs"
+    ]
+  },
+  {
+    "title": "ML",
+    "items": [
+      "Regression",
+      "Classification",
+      "Recsys",
+      "Time Series"
+    ]
+  },
+  {
+    "title": "DSA",
+    "items": [
+      "Arrays",
+      "Hashing",
+      "Two Pointers",
+      "Binary Search",
+      "Trees",
+      "Graphs",
+      "DP"
+    ]
+  },
+  {
+    "title": "Tools",
+    "items": [
+      "Git",
+      "Jupyter",
+      "VS Code",
+      "Linux",
+      "Docker (basics)"
+    ]
+  }
+]
