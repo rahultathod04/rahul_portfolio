@@ -1,7 +1,5 @@
 # Rahul's Portfolio — Data Science + DSA
 
-[![Live Demo](https://img.shields.io/badge/View-Portfolio-blue)](https://your-live-demo-link.com)
-
 A clean, fast, AI-assisted static portfolio showcasing my journey in **Data Science** and **Data Structures & Algorithms (DSA)**. Built with **HTML, CSS, JavaScript**, and **JSON-based configuration**, it’s designed for easy updates, responsive design, and future scalability.
 
 ---
