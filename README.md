@@ -21,18 +21,7 @@ I enjoy blending creativity with technical precision to build solutions, and I s
 
 ---
 
-## 📂 Editing Content
-This portfolio is content-driven via `/data/` JSON files, making it easy to update without editing HTML directly.
 
-1. **Edit your content** in `/data/`:
-   - `projects.json`: Add new projects.
-   - `skills.json`: Update your skill buckets.
-   - `leetcode.json`: Update DSA stats and links.
-2. **Replace assets**:
-   - `assets/avatar.png` — your photo (square recommended).
-   - `assets/Rahul_Tathod_Resume.pdf` — your latest resume.
-3. Open `index.html` locally to preview.  
-   Deploy with **GitHub Pages** or **Netlify**.
 
 ---
 
@@ -40,33 +29,16 @@ This portfolio is content-driven via `/data/` JSON files, making it easy to upda
 For privacy and reliability, the hover card uses static data from `data/leetcode.json`.  
 You can swap it for a live API or third-party image card if desired.
 
----
+----
 
-## 🔍 Project Kinds
-Each project in `projects.json` should have one of:
-- `data` — Data Science
-- `ml` — Machine Learning
-- `algo` — Algorithms
-- `viz` — Visualizations  
 
-The filter buttons will show/hide projects by kind.
-
----
-
-## 🎨 Customizing the Theme
-Colors, fonts, and layout can be adjusted in `/css/styles.css` to match your personal branding.
-
----
-
-## 📸 Preview
-*(Add a screenshot of your portfolio here)*
 
 ---
 
 ## 📬 Contact
-- **Email:** your.email@example.com  
-- **LinkedIn:** [linkedin.com/in/rahul-tathod](https://linkedin.com/in/rahul-tathod)  
-- **GitHub:** [github.com/your-username](https://github.com/your-username)
+- **Email:** rahultathod04@gmai.com  
+- **LinkedIn:** [linkedin.com/in/rahul-tathod]([https://linkedin.com/in/rahul-tathod](https://leetcode.com/u/rahultathod04/))  
+- **GitHub:** [github.com/your-username](https://github.com/rahultathod04)
 
 ---
 
