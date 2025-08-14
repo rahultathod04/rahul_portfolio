@@ -37,7 +37,7 @@ You can swap it for a live API or third-party image card if desired.
 
 ## 📬 Contact
 - **Email:** rahultathod04@gmai.com  
-- **LinkedIn:** [linkedin.com/in/rahultathod04]([https://linkedin.com/in/rahultathod04])  
+- **LinkedIn:** [linkedin.com/in/rahultathod04]([https://linkedin.com/rahultathod04])  
 - **GitHub:** [github.com/rahultathod04](https://github.com/rahultathod04)
 
 ---
